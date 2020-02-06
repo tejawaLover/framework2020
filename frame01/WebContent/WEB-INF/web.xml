@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>frame01</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <listener>
+  	<listener-class>com.bit.config.MyListener</listener-class>
+  </listener>
+  <listener>
+  	<listener-class>com.bit.config.MyListener2</listener-class>
+  </listener>
+  <filter>
+  	<filter-name>filter1</filter-name>
+  	<filter-class>com.bit.config.MyFilter1</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>filter1</filter-name>
+  	<url-pattern>/*</url-pattern> <!-- 전부 와일드 -->
+  </filter-mapping>
+  <!-- 
+    <filter-mapping>
+  	<filter-name>filter1</filter-name> 
+  	<url-pattern>/ex01.bit</url-pattern> 확장자 붙은 와일드 처리시 *.bit 
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>filter1</filter-name>
+  	<url-pattern>/ex02.bit</url-pattern>
+  </filter-mapping>
+  -->
+</web-app>
